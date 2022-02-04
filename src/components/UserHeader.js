@@ -1,7 +1,9 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {fetchUser} from '../actions';
+import './App.css'
 
+//Displaying User name for each and every post
 class UserHeader extends React.Component {
     componentDidMount(){
         this.props.fetchUser(this.props.userId);
@@ -13,7 +15,10 @@ class UserHeader extends React.Component {
             return null;
         }
         return(
-         <div className="header">{user.name}</div>
+            <div className= 'display-flex'>
+                <span className="header">Name : </span>
+                <span>  {user.name} </span>
+            </div>
         )
     }
 }
